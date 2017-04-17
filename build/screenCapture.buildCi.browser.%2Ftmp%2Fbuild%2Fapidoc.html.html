@@ -1,0 +1,1619 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/vtloc/officegen#readme">officegen-2 (v0.3.7)</a>
+</h1>
+<h4>Office Open XML Generator using Node.js streams. Supporting Microsoft Office 2007 and later Word (docx), PowerPoint (pptx,ppsx) and Excel (xlsx). This module is for all frameworks and environments. No need for any commandline tool - this module is doing everything inside it.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2">module officegen-2</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.officegen-2">
+            function <span class="apidocSignatureSpan"></span>officegen-2
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.Gruntfile">
+            function <span class="apidocSignatureSpan">officegen-2.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.makegen">
+            function <span class="apidocSignatureSpan">officegen-2.</span>makegen
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.getPrototypeByName">
+            function <span class="apidocSignatureSpan">officegen-2.</span>plugins.getPrototypeByName
+            <span class="apidocSignatureSpan">( typeName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerDocType">
+            function <span class="apidocSignatureSpan">officegen-2.</span>plugins.registerDocType
+            <span class="apidocSignatureSpan">( typeName, createFunc, schema_data, docType, displayName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerParserType">
+            function <span class="apidocSignatureSpan">officegen-2.</span>plugins.registerParserType
+            <span class="apidocSignatureSpan">( typeName, parserFunc, extra_data, displayName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerPrototype">
+            function <span class="apidocSignatureSpan">officegen-2.</span>plugins.registerPrototype
+            <span class="apidocSignatureSpan">( typeName, baseObj, displayName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.setVerboseMode">
+            function <span class="apidocSignatureSpan">officegen-2.</span>setVerboseMode
+            <span class="apidocSignatureSpan">( new_state )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.toString">
+            function <span class="apidocSignatureSpan">officegen-2.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>docType</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>genofficechart</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>msexcel_builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>msofficegen</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>openofficegen</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>plugins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">officegen-2.</span>schema</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">officegen-2.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.Gruntfile">module officegen-2.Gruntfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.Gruntfile.Gruntfile">
+            function <span class="apidocSignatureSpan">officegen-2.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.genofficechart">module officegen-2.genofficechart</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.genofficechart.makeBarChartStringFromData">
+            function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makeBarChartStringFromData
+            <span class="apidocSignatureSpan">( data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.genofficechart.makeColumnChartStringFromData">
+            function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makeColumnChartStringFromData
+            <span class="apidocSignatureSpan">( data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.genofficechart.makeGroupBarChartStringFromData">
+            function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makeGroupBarChartStringFromData
+            <span class="apidocSignatureSpan">( data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.genofficechart.makePieChartStringFromData">
+            function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makePieChartStringFromData
+            <span class="apidocSignatureSpan">( data )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.msexcel_builder">module officegen-2.msexcel_builder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.msexcel_builder.createWorkbook">
+            function <span class="apidocSignatureSpan">officegen-2.msexcel_builder.</span>createWorkbook
+            <span class="apidocSignatureSpan">(fpath, fname)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.msofficegen">module officegen-2.msofficegen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.msofficegen.makemsdoc">
+            function <span class="apidocSignatureSpan">officegen-2.msofficegen.</span>makemsdoc
+            <span class="apidocSignatureSpan">( genobj, new_type, options, gen_private, type_info )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.openofficegen">module officegen-2.openofficegen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.openofficegen.makeoodoc">
+            function <span class="apidocSignatureSpan">officegen-2.openofficegen.</span>makeoodoc
+            <span class="apidocSignatureSpan">( genobj, new_type, options, gen_private, type_info )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.plugins">module officegen-2.plugins</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.getPrototypeByName">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>getPrototypeByName
+            <span class="apidocSignatureSpan">( typeName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerDocType">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerDocType
+            <span class="apidocSignatureSpan">( typeName, createFunc, schema_data, docType, displayName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerParserType">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerParserType
+            <span class="apidocSignatureSpan">( typeName, parserFunc, extra_data, displayName )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerPrototype">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerPrototype
+            <span class="apidocSignatureSpan">( typeName, baseObj, displayName )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.plugins.getPrototypeByName">module officegen-2.plugins.getPrototypeByName</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.getPrototypeByName.getPrototypeByName">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>getPrototypeByName
+            <span class="apidocSignatureSpan">( typeName )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.plugins.registerDocType">module officegen-2.plugins.registerDocType</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerDocType.registerDocType">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerDocType
+            <span class="apidocSignatureSpan">( typeName, createFunc, schema_data, docType, displayName )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.plugins.registerParserType">module officegen-2.plugins.registerParserType</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerParserType.registerParserType">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerParserType
+            <span class="apidocSignatureSpan">( typeName, parserFunc, extra_data, displayName )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.plugins.registerPrototype">module officegen-2.plugins.registerPrototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.plugins.registerPrototype.registerPrototype">
+            function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerPrototype
+            <span class="apidocSignatureSpan">( typeName, baseObj, displayName )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.setVerboseMode">module officegen-2.setVerboseMode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.setVerboseMode.setVerboseMode">
+            function <span class="apidocSignatureSpan">officegen-2.</span>setVerboseMode
+            <span class="apidocSignatureSpan">( new_state )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.officegen-2.toString">module officegen-2.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.officegen-2.toString.toString">
+            function <span class="apidocSignatureSpan">officegen-2.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2" id="apidoc.module.officegen-2">module officegen-2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.officegen-2" id="apidoc.element.officegen-2.officegen-2">
+        function <span class="apidocSignatureSpan"></span>officegen-2
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makegen( options ) {
+	return new officegen ( options );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.Gruntfile" id="apidoc.element.officegen-2.Gruntfile">
+        function <span class="apidocSignatureSpan">officegen-2.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+	var path = require("path");
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		coffee: {
+			dynamic_mappings: {
+			    expand: true,
+			    flatten: false,
+			    cwd: 'src/',
+			    src: ['**/*.coffee'],
+			    dest: 'lib/',
+			    ext: '.js'
+			}
+		},
+		
+		watch: {
+			coffee: {
+				files: ['src/*.coffee'],
+				tasks: 'coffee'
+			},
+		}
+	});
+	
+	grunt.event.on('watch', function(action, filepath, target) {
+		console.log(filepath);
+        grunt.config(['coffee', 'dynamic_mappings', 'files', 'src'], filepath);
+    } );
+	
+	// Load the plugin that provides the "less" task.
+
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-coffee');
+	
+	grunt.registerTask('default', ['coffee:dynamic_mappings', 'watch']);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.makegen" id="apidoc.element.officegen-2.makegen">
+        function <span class="apidocSignatureSpan">officegen-2.</span>makegen
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makegen( options ) {
+	return new officegen ( options );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.getPrototypeByName" id="apidoc.element.officegen-2.plugins.getPrototypeByName">
+        function <span class="apidocSignatureSpan">officegen-2.</span>plugins.getPrototypeByName
+        <span class="apidocSignatureSpan">( typeName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPrototypeByName( typeName ) {
+	return int_officegen_globals.docPrototypes[typeName];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerDocType" id="apidoc.element.officegen-2.plugins.registerDocType">
+        function <span class="apidocSignatureSpan">officegen-2.</span>plugins.registerDocType
+        <span class="apidocSignatureSpan">( typeName, createFunc, schema_data, docType, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerDocType( typeName, createFunc, schema_data, docType, displayName ) {
+	int_officegen_globals.types[typeName] = {};
+	int_officegen_globals.types[typeName].createFunc = createFunc;
+	int_officegen_globals.types[typeName].schema_data = schema_data;
+	int_officegen_globals.types[typeName].type = docType;
+	int_officegen_globals.types[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerParserType" id="apidoc.element.officegen-2.plugins.registerParserType">
+        function <span class="apidocSignatureSpan">officegen-2.</span>plugins.registerParserType
+        <span class="apidocSignatureSpan">( typeName, parserFunc, extra_data, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerParserType( typeName, parserFunc, extra_data, displayName ) {
+	int_officegen_globals.resParserTypes[typeName] = {};
+	int_officegen_globals.resParserTypes[typeName].parserFunc = parserFunc;
+	int_officegen_globals.resParserTypes[typeName].extra_data = extra_data;
+	int_officegen_globals.resParserTypes[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerPrototype" id="apidoc.element.officegen-2.plugins.registerPrototype">
+        function <span class="apidocSignatureSpan">officegen-2.</span>plugins.registerPrototype
+        <span class="apidocSignatureSpan">( typeName, baseObj, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerPrototype( typeName, baseObj, displayName ) {
+	int_officegen_globals.docPrototypes[typeName] = {};
+	int_officegen_globals.docPrototypes[typeName].baseObj = baseObj;
+	int_officegen_globals.docPrototypes[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.setVerboseMode" id="apidoc.element.officegen-2.setVerboseMode">
+        function <span class="apidocSignatureSpan">officegen-2.</span>setVerboseMode
+        <span class="apidocSignatureSpan">( new_state )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setVerboseMode( new_state ) {
+	int_officegen_globals.settings.verbose = new_state;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.toString" id="apidoc.element.officegen-2.toString">
+        function <span class="apidocSignatureSpan">officegen-2.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			'c:numCache' : {
+				'c:formatCode' : formatCode,
+				'c:ptCount' : {'@val': ''+numArr.length},
+				'#list' : function() {
+					result= [];
+					for( var i=0; i&lt;numArr.length; i++ )
+					{
+						result.push({'c:pt' : { '@idx':i, 'c:v': numArr[i].<span class="apidocCodeKeywordSpan">toString
+</span>() }});
+					}
+					
+					return result;
+				}
+			}
+		}
+	};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.Gruntfile" id="apidoc.module.officegen-2.Gruntfile">module officegen-2.Gruntfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.Gruntfile.Gruntfile" id="apidoc.element.officegen-2.Gruntfile.Gruntfile">
+        function <span class="apidocSignatureSpan">officegen-2.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+	var path = require("path");
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		coffee: {
+			dynamic_mappings: {
+			    expand: true,
+			    flatten: false,
+			    cwd: 'src/',
+			    src: ['**/*.coffee'],
+			    dest: 'lib/',
+			    ext: '.js'
+			}
+		},
+		
+		watch: {
+			coffee: {
+				files: ['src/*.coffee'],
+				tasks: 'coffee'
+			},
+		}
+	});
+	
+	grunt.event.on('watch', function(action, filepath, target) {
+		console.log(filepath);
+        grunt.config(['coffee', 'dynamic_mappings', 'files', 'src'], filepath);
+    } );
+	
+	// Load the plugin that provides the "less" task.
+
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-coffee');
+	
+	grunt.registerTask('default', ['coffee:dynamic_mappings', 'watch']);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.genofficechart" id="apidoc.module.officegen-2.genofficechart">module officegen-2.genofficechart</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.genofficechart.makeBarChartStringFromData" id="apidoc.element.officegen-2.genofficechart.makeBarChartStringFromData">
+        function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makeBarChartStringFromData
+        <span class="apidocSignatureSpan">( data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeBarChartStringFromData( data ) {
+  var series = [];	
+	var rc2a = rowColToSheetAddress; // shortcut
+	
+	for( var i=0; i&lt; data['data'].length; i++ )
+	{
+		var serie = data['data'][i];
+		var serieData = {
+			'c:ser' : {
+				'c:idx' : {'@val': i},
+				'c:order' : {'@val': i},
+				'c:tx' : strRefFromString('Sheet1!' + rc2a(1,2+i,true, true), [serie.name]), // serie's value
+				 'c:invertIfNegative' : {'@val':'0'},
+				 'c:cat' : strRefFromString('Sheet1!'+ rc2a(2,1,true, true) + ':' + rc2a(2+serie.labels.length-1,1,true, true), serie.labels
+),
+				 'c:val' : numRef('Sheet1!'+rc2a(2,2+i,true, true) + ':' + rc2a(2+serie.labels.length-1,2+i,true, true), serie.values, "General
+")
+			}
+		};
+		var root = xmlBuilder.create(serieData, {headless: true});
+	
+		series.push(root.end({ pretty: true, indent: '  ', newline: '\n' }));
+	}
+	
+	var seriesString = "";
+	
+	for( var i=0; i&lt;data['data'].length; i++ )
+	{
+		seriesString += series[i] + '\n';
+	}
+
+  return '&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;\
+&lt;c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml
+/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"&gt;\
+&lt;c:lang val="en-US"/&gt;\
+&lt;c:chart&gt;\
+    &lt;c:plotArea&gt;\
+        &lt;c:layout/&gt;\
+        &lt;c:barChart&gt;\
+            &lt;c:barDir val="bar"/&gt;\
+            &lt;c:grouping val="clustered"/&gt;'
+            + seriesString +
+            '&lt;c:axId val="64451712"/&gt;\
+            &lt;c:axId val="64453248"/&gt;\
+        &lt;/c:barChart&gt;\
+        &lt;c:catAx&gt;\
+            &lt;c:axId val="64451712"/&gt;\
+            &lt;c:scaling&gt;\
+                &lt;c:orientation val="minMax"/&gt;\
+            &lt;/c:scaling&gt;\
+            &lt;c:axPos val="l"/&gt;\
+            &lt;c:tickLblPos val="nextTo"/&gt;\
+            &lt;c:crossAx val="64453248"/&gt;\
+            &lt;c:crosses val="autoZero"/&gt;\
+            &lt;c:auto val="1"/&gt;\
+            &lt;c:lblAlgn val="ctr"/&gt;\
+            &lt;c:lblOffset val="100"/&gt;\
+        &lt;/c:catAx&gt;\
+        &lt;c:valAx&gt;\
+            &lt;c:axId val="64453248"/&gt;\
+            &lt;c:scaling&gt;\
+                &lt;c:orientation val="minMax"/&gt;\
+            &lt;/c:scaling&gt;\
+            &lt;c:axPos val="b"/&gt;\
+            &lt;c:majorGridlines/&gt;\
+            &lt;c:numFmt formatCode="General" sourceLinked="1"/&gt;\
+            &lt;c:tickLblPos val="nextTo"/&gt;\
+            &lt;c:crossAx val="64451712"/&gt;\
+            &lt;c:crosses val="autoZero"/&gt;\
+            &lt;c:crossBetween val="between"/&gt;\
+        &lt;/c:valAx&gt;\
+    &lt;/c:plotArea&gt;\
+    &lt;c:legend&gt;\
+        &lt;c:legendPos val="r"/&gt;\
+        &lt;c:layout/&gt;\
+    &lt;/c:legend&gt;\
+    &lt;c:plotVisOnly val="1"/&gt;\
+&lt;/c:chart&gt;\
+&lt;c:txPr&gt;\
+    &lt;a:bodyPr/&gt;\
+    &lt;a:lstStyle/&gt;\
+    &lt;a:p&gt;\
+        &lt;a:pPr&gt;\
+            &lt;a:defRPr sz="1800"/&gt;\
+        &lt;/a:pPr&gt;\
+        &lt;a:endParaRPr lang="en-US"/&gt;\
+    &lt;/a:p&gt;\
+&lt;/c:txPr&gt;\
+&lt;c:externalData r:id="rId1"/&gt;\
+&lt;/c:chartSpace&gt;';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+		else if( data['renderType'] === 'column' )
+    {
+			return officeChart.makeColumnChartStringFromData( data);
+    }
+    else if( data['renderType'] === 'bar' )
+    {
+			return officeChart.<span class="apidocCodeKeywordSpan">makeBarChartStringFromData</span>( data);
+    }
+    else if( data['renderType'] === 'group-bar' )
+    {
+			return officeChart.makeGroupBarChartStringFromData( data);
+    }
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.genofficechart.makeColumnChartStringFromData" id="apidoc.element.officegen-2.genofficechart.makeColumnChartStringFromData">
+        function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makeColumnChartStringFromData
+        <span class="apidocSignatureSpan">( data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeColumnChartStringFromData( data ) {
+
+	var series = [];	
+	var rc2a = rowColToSheetAddress; // shortcut
+	
+	for( var i=0; i&lt; data['data'].length; i++ )
+	{
+		var serie = data['data'][i];
+		var serieData = {
+			'c:ser' : {
+				'c:idx' : {'@val': i},
+				'c:order' : {'@val': i},
+				'c:tx' : strRefFromString('Sheet1!' + rc2a(1,2+i,true, true), [serie.name]), // serie's value
+				 'c:invertIfNegative' : {'@val':'0'},
+				 'c:cat' : strRefFromString('Sheet1!'+ rc2a(2,1,true, true) + ':' + rc2a(2+serie.labels.length-1,1,true, true), serie.labels
+),
+				 'c:val' : numRef('Sheet1!'+rc2a(2,2+i,true, true) + ':' + rc2a(2+serie.labels.length-1,2+i,true, true), serie.values, "General
+")
+			}
+		};
+		var root = xmlBuilder.create(serieData, {headless: true});
+	
+		series.push(root.end({ pretty: true, indent: '  ', newline: '\n' }));
+	}
+	
+	var seriesString = "";
+	
+	for( var i=0; i&lt;data['data'].length; i++ )
+	{
+		seriesString += series[i] + '\n';
+	}
+	
+	return '&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;\
+&lt;c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml
+/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"&gt;\
+&lt;c:date1904 val="1"/&gt;\
+&lt;c:lang val="en-US"/&gt;\
+&lt;c:chart&gt;\
+    &lt;c:plotArea&gt;\
+        &lt;c:layout/&gt;\
+        &lt;c:barChart&gt;\
+            &lt;c:barDir val="col"/&gt;\
+            &lt;c:grouping val="clustered"/&gt;'
+            + seriesString +
+            '&lt;c:axId val="45021824"/&gt;\
+            &lt;c:axId val="45291008"/&gt;\
+        &lt;/c:barChart&gt;\
+        &lt;c:catAx&gt;\
+            &lt;c:axId val="45021824"/&gt;\
+            &lt;c:scaling&gt;\
+                &lt;c:orientation val="minMax"/&gt;\
+            &lt;/c:scaling&gt;\
+            &lt;c:axPos val="b"/&gt;\
+            &lt;c:numFmt formatCode="General" sourceLinked="1"/&gt;\
+            &lt;c:tickLblPos val="nextTo"/&gt;\
+            &lt;c:crossAx val="45291008"/&gt;\
+            &lt;c:crosses val="autoZero"/&gt;\
+            &lt;c:auto val="1"/&gt;\
+            &lt;c:lblAlgn val="ctr"/&gt;\
+            &lt;c:lblOffset val="100"/&gt;\
+        &lt;/c:catAx&gt;\
+        &lt;c:valAx&gt;\
+            &lt;c:axId val="45291008"/&gt;\
+            &lt;c:scaling&gt;\
+                &lt;c:orientation val="minMax"/&gt;\
+            &lt;/c:scaling&gt;\
+            &lt;c:axPos val="l"/&gt;\
+            &lt;c:majorGridlines/&gt;\
+            &lt;c:numFmt formatCode="General" sourceLinked="1"/&gt;\
+            &lt;c:tickLblPos val="nextTo"/&gt;\
+            &lt;c:crossAx val="45021824"/&gt;\
+            &lt;c:crosses val="autoZero"/&gt;\
+            &lt;c:crossBetween val="between"/&gt;\
+        &lt;/c:valAx&gt;\
+    &lt;/c:plotArea&gt;\
+    &lt;c:legend&gt;\
+        &lt;c:legendPos val="r"/&gt;\
+        &lt;c:layout/&gt;\
+    &lt;/c:legend&gt;\
+    &lt;c:plotVisOnly val="1"/&gt;\
+&lt;/c:chart&gt;\
+&lt;c:txPr&gt;\
+    &lt;a:bodyPr/&gt;\
+    &lt;a:lstStyle/&gt;\
+    &lt;a:p&gt;\
+        &lt;a:pPr&gt;\
+            &lt;a:defRPr sz="1800"/&gt;\
+        &lt;/a:pPr&gt;\
+        &lt;a:endParaRPr lang="en-US"/&gt;\
+    &lt;/a:p&gt;\
+&lt;/c:txPr&gt;\
+&lt;c:externalData r:id="rId1"/&gt;\
+&lt;/c:chartSpace&gt;'
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function cbMakeCharts ( data ) {
+		if( data['renderType'] === 'pie' )
+		{
+			return officeChart.makePieChartStringFromData( data);
+		}
+		else if( data['renderType'] === 'column' )
+{
+			return officeChart.<span class="apidocCodeKeywordSpan">makeColumnChartStringFromData</span>( data);
+}
+else if( data['renderType'] === 'bar' )
+{
+			return officeChart.makeBarChartStringFromData( data);
+}
+else if( data['renderType'] === 'group-bar' )
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.genofficechart.makeGroupBarChartStringFromData" id="apidoc.element.officegen-2.genofficechart.makeGroupBarChartStringFromData">
+        function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makeGroupBarChartStringFromData
+        <span class="apidocSignatureSpan">( data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeGroupBarChartStringFromData( data ) {
+  var series = [];	
+	var rc2a = rowColToSheetAddress; // shortcut
+	
+	for( var i=0; i&lt; data['data'].length; i++ )
+	{
+		var serie = data['data'][i];
+		var serieData = {
+			'c:ser' : {
+				'c:idx' : {'@val': i},
+				'c:order' : {'@val': i},
+				'c:tx' : strRefFromString('Sheet1!' + rc2a(1,2+i,true, true), [serie.name]), // serie's value
+				 'c:invertIfNegative' : {'@val':'0'},
+				 'c:cat' : strRefFromString('Sheet1!'+ rc2a(2,1,true, true) + ':' + rc2a(2+serie.labels.length-1,1,true, true), serie.labels
+),
+				 'c:val' : numRef('Sheet1!'+rc2a(2,2+i,true, true) + ':' + rc2a(2+serie.labels.length-1,2+i,true, true), serie.values, "General
+")
+			}
+		};
+		var root = xmlBuilder.create(serieData, {headless: true});
+	
+		series.push(root.end({ pretty: true, indent: '  ', newline: '\n' }));
+	}
+	
+	var seriesString = "";
+	
+	for( var i=0; i&lt;data['data'].length; i++ )
+	{
+		seriesString += series[i] + '\n';
+	}
+
+  return '&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;\
+&lt;c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml
+/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"&gt;\
+&lt;c:lang val="en-US"/&gt;\
+&lt;c:chart&gt;\
+    &lt;c:plotArea&gt;\
+        &lt;c:layout/&gt;\
+        &lt;c:barChart&gt;\
+            &lt;c:barDir val="bar"/&gt;\
+            &lt;c:grouping val="percentStacked"/&gt;'
+            + seriesString +
+            '&lt;c:overlap val="100"/&gt;\
+            &lt;c:axId val="65025536"/&gt;\
+            &lt;c:axId val="65037824"/&gt;\
+        &lt;/c:barChart&gt;\
+        &lt;c:catAx&gt;\
+            &lt;c:axId val="65025536"/&gt;\
+            &lt;c:scaling&gt;\
+                &lt;c:orientation val="minMax"/&gt;\
+            &lt;/c:scaling&gt;\
+            &lt;c:axPos val="l"/&gt;\
+            &lt;c:tickLblPos val="nextTo"/&gt;\
+            &lt;c:crossAx val="65037824"/&gt;\
+            &lt;c:crosses val="autoZero"/&gt;\
+            &lt;c:auto val="1"/&gt;\
+            &lt;c:lblAlgn val="ctr"/&gt;\
+            &lt;c:lblOffset val="100"/&gt;\
+        &lt;/c:catAx&gt;\
+        &lt;c:valAx&gt;\
+            &lt;c:axId val="65037824"/&gt;\
+            &lt;c:scaling&gt;\
+                &lt;c:orientation val="minMax"/&gt;\
+            &lt;/c:scaling&gt;\
+            &lt;c:axPos val="b"/&gt;\
+            &lt;c:majorGridlines/&gt;\
+            &lt;c:numFmt formatCode="0%" sourceLinked="1"/&gt;\
+            &lt;c:tickLblPos val="nextTo"/&gt;\
+            &lt;c:crossAx val="65025536"/&gt;\
+            &lt;c:crosses val="autoZero"/&gt;\
+            &lt;c:crossBetween val="between"/&gt;\
+        &lt;/c:valAx&gt;\
+    &lt;/c:plotArea&gt;\
+    &lt;c:legend&gt;\
+        &lt;c:legendPos val="r"/&gt;\
+        &lt;c:layout/&gt;\
+    &lt;/c:legend&gt;\
+    &lt;c:plotVisOnly val="1"/&gt;\
+&lt;/c:chart&gt;\
+&lt;c:txPr&gt;\
+    &lt;a:bodyPr/&gt;\
+    &lt;a:lstStyle/&gt;\
+    &lt;a:p&gt;\
+        &lt;a:pPr&gt;\
+            &lt;a:defRPr sz="1800"/&gt;\
+        &lt;/a:pPr&gt;\
+        &lt;a:endParaRPr lang="en-US"/&gt;\
+    &lt;/a:p&gt;\
+&lt;/c:txPr&gt;\
+&lt;c:externalData r:id="rId1"/&gt;\
+&lt;/c:chartSpace&gt;';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    else if( data['renderType'] === 'bar' )
+    {
+			return officeChart.makeBarChartStringFromData( data);
+    }
+    else if( data['renderType'] === 'group-bar' )
+    {
+			return officeChart.<span class="apidocCodeKeywordSpan">makeGroupBarChartStringFromData</span>( data);
+    }
+	}
+	
+	function cbMakeChartDataExcel ( data ) {
+		
+	}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.genofficechart.makePieChartStringFromData" id="apidoc.element.officegen-2.genofficechart.makePieChartStringFromData">
+        function <span class="apidocSignatureSpan">officegen-2.genofficechart.</span>makePieChartStringFromData
+        <span class="apidocSignatureSpan">( data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makePieChartStringFromData( data ) {
+  var series = [];	
+	var rc2a = rowColToSheetAddress; // shortcut
+	
+	for( var i=0; i&lt; data['data'].length; i++ )
+	{
+		var serie = data['data'][i];
+		var serieData = {
+			'c:ser' : {
+				'c:idx' : {'@val': i},
+				'c:order' : {'@val': i},
+				'c:tx' : strRefFromString('Sheet1!' + rc2a(1,2+i,true, true), [serie.name]), // serie's value
+				 'c:invertIfNegative' : {'@val':'0'},
+				 'c:cat' : strRefFromString('Sheet1!'+ rc2a(2,1,true, true) + ':' + rc2a(2+serie.labels.length-1,1,true, true), serie.labels
+),
+				 'c:val' : numRef('Sheet1!'+rc2a(2,2+i,true, true) + ':' + rc2a(2+serie.labels.length-1,2+i,true, true), serie.values, "General
+")
+			}
+		};
+		var root = xmlBuilder.create(serieData, {headless: true});
+	
+		series.push(root.end({ pretty: true, indent: '  ', newline: '\n' }));
+	}
+	
+	var seriesString = "";
+	
+	for( var i=0; i&lt;data['data'].length; i++ )
+	{
+		seriesString += series[i] + '\n';
+	}
+	
+	return '&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;\
+&lt;c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml
+/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"&gt;\
+&lt;c:lang val="en-US"/&gt;\
+&lt;c:chart&gt;\
+    &lt;c:title&gt;\
+        &lt;c:layout/&gt;\
+    &lt;/c:title&gt;\
+    &lt;c:plotArea&gt;\
+        &lt;c:layout/&gt;\
+        &lt;c:pieChart&gt;\
+            &lt;c:varyColors val="1"/&gt;'
+            + seriesString +
+            '&lt;c:firstSliceAng val="0"/&gt;\
+        &lt;/c:pieChart&gt;\
+    &lt;/c:plotArea&gt;\
+    &lt;c:legend&gt;\
+        &lt;c:legendPos val="r"/&gt;\
+        &lt;c:layout/&gt;\
+    &lt;/c:legend&gt;\
+    &lt;c:plotVisOnly val="1"/&gt;\
+&lt;/c:chart&gt;\
+&lt;c:txPr&gt;\
+    &lt;a:bodyPr/&gt;\
+    &lt;a:lstStyle/&gt;\
+    &lt;a:p&gt;\
+        &lt;a:pPr&gt;\
+            &lt;a:defRPr sz="1800"/&gt;\
+        &lt;/a:pPr&gt;\
+        &lt;a:endParaRPr lang="en-US"/&gt;\
+    &lt;/a:p&gt;\
+&lt;/c:txPr&gt;\
+&lt;c:externalData r:id="rId1"/&gt;\
+&lt;/c:chartSpace&gt;'
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	///
+	/// @param[in] data
+	/// @return Text Xml string.
+	///
+	function cbMakeCharts ( data ) {
+		if( data['renderType'] === 'pie' )
+		{
+			return officeChart.<span class="apidocCodeKeywordSpan">makePieChartStringFromData</span>( data);
+		}
+		else if( data['renderType'] === 'column' )
+{
+			return officeChart.makeColumnChartStringFromData( data);
+}
+else if( data['renderType'] === 'bar' )
+{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.msexcel_builder" id="apidoc.module.officegen-2.msexcel_builder">module officegen-2.msexcel_builder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.msexcel_builder.createWorkbook" id="apidoc.element.officegen-2.msexcel_builder.createWorkbook">
+        function <span class="apidocSignatureSpan">officegen-2.msexcel_builder.</span>createWorkbook
+        <span class="apidocSignatureSpan">(fpath, fname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createWorkbook = function (fpath, fname) {
+  return new Workbook(fpath, fname);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			gen_private.pages[pageNumber].data[objNumber].type = 'chart';
+			gen_private.pages[pageNumber].data[objNumber].renderType = 'column';
+			gen_private.pages[pageNumber].data[objNumber].title = data['title'];
+			gen_private.pages[pageNumber].data[objNumber].data = data['data'];
+			data['renderType'] = renderType;
+			
+			// First, generate a temporatory excel file for storing the chart's data
+			var workbook = excelbuilder.<span class="apidocCodeKeywordSpan">createWorkbook</span>('./', 'sample' + GLOBAL_CHART_COUNT
+ + '.xlsx')
+
+			// Create a new worksheet with 10 columns and 12 rows
+			// number of columns: data['data'].length+1 -&gt; equaly number of series
+			// number of rows: data['data'][0].values.length+1
+			console.log(data);
+			
+			var sheet1 = workbook.createSheet('Sheet1', data['data'].length+1, data['data'][0].values.length
++1);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.msofficegen" id="apidoc.module.officegen-2.msofficegen">module officegen-2.msofficegen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.msofficegen.makemsdoc" id="apidoc.element.officegen-2.msofficegen.makemsdoc">
+        function <span class="apidocSignatureSpan">officegen-2.msofficegen.</span>makemsdoc
+        <span class="apidocSignatureSpan">( genobj, new_type, options, gen_private, type_info )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makemsdoc( genobj, new_type, options, gen_private, type_info ) {
+	///
+	/// @brief Generate string of the current date and time.
+	///
+	/// This method generating a string with the current date and time in Office XML format.
+	///
+	/// @return String of the current date and time in Office XML format.
+	///
+	function getCurDateTimeForOffice () {
+		var date = new Date ();
+
+		var year = date.getFullYear ();
+		var month = date.getMonth () + 1;
+		var day = date.getDate ();
+		var hour = date.getHours ();
+		var min = date.getMinutes ();
+		var sec = date.getSeconds ();
+
+		month = (month &lt; 10 ? "0" : "") + month;
+		day = (day &lt; 10 ? "0" : "") + day;
+		hour = (hour &lt; 10 ? "0" : "") + hour;
+		min = (min &lt; 10 ? "0" : "") + min;
+		sec = (sec &lt; 10 ? "0" : "") + sec;
+
+		return year + "-" + month + "-" + day + "T" + hour + ":" + min + ":" + sec + 'Z';
+	}
+
+	///
+	/// @brief Compact the given array.
+	///
+	/// This function compacting the given array.
+	///
+	/// @param[in] arr The array to compact.
+	///
+	function compactArray ( arr ) {
+		var len = arr.length, i;
+
+		for ( i = 0; i &lt; len; i++ )
+			arr[i] &amp;&amp; arr.push ( arr[i] );  // Copy non-empty values to the end of the array.
+
+		arr.splice ( 0 , len ); // Cut the array and leave only the non-empty values.
+	}
+
+	///
+	/// @brief Create the main files list resource.
+	///
+	/// ???.
+	///
+	/// @param[in] data Ignored by this callback function.
+	/// @return Text string.
+	///
+	function cbMakeMainFilesList ( data ) {
+		var outString = gen_private.plugs.type.msoffice.cbMakeMsOfficeBasicXml ( data );
+		outString += '&lt;Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"&gt;';
+
+		for ( var i = 0, total_size = gen_private.type.msoffice.files_list.length; i &lt; total_size; i++ ) {
+			if ( typeof gen_private.type.msoffice.files_list[i] != 'undefined' ) {
+				if ( gen_private.type.msoffice.files_list[i].ext )
+				{
+					
+					// Fixed by @author:vtloc @date:2014Jan09
+					// Reason: if we write out duplicate extension, office will raise error
+					//
+					if( outString.indexOf('&lt;Default Extension="'+gen_private.type.msoffice.files_list[i].ext) == -1 )
+					{ // check to make sure we don't write duplicate extension tag
+						outString += '&lt;Default Extension="' + gen_private.type.msoffice.files_list[i].ext + '" ContentType="' + gen_private.type.msoffice
+.files_list[i].type + '"/&gt;';
+					}
+				} else
+				{
+					outString += '&lt;Override PartName="' + gen_private.type.msoffice.files_list[i].name + '" ContentType="' + gen_private.type.msoffice
+.files_list[i].type + '"/&gt;';
+				} // Endif.
+			} // Endif.
+		} // End of for loop.
+
+		outString += '&lt;/Types&gt;\n';
+		return outString;
+	}
+
+	///
+	/// @brief ???.
+	///
+	/// ???.
+	///
+	/// @param[in] data Ignored by this callback function.
+	/// @return Text string.
+	///
+	function cbMakeTheme ( data ) {
+		return gen_private.plugs.type.msoffice.cbMakeMsOfficeBasicXml ( data ) + '&lt;a:theme xmlns:a="http://schemas.openxmlformats.org/
+drawingml/2006/main" name="Office Theme"&gt;&lt;a:themeElements&gt;&lt;a:clrScheme name="Office"&gt;&lt;a:dk1&gt;&lt;a:sysClr val="windowText" lastClr="
+000000"/&gt;&lt;/a:dk1&gt;&lt;a:lt1&gt;&lt;a:sysClr val="window" lastClr="FFFFFF"/&gt;&lt;/a:lt1&gt;&lt;a:dk2&gt;&lt;a:srgbClr val="1F497D"/&gt;&lt;/a:dk2&gt;&lt;a:lt2&gt;&lt;a:srgbClr
+ val="EEECE1"/&gt;&lt;/a:lt2&gt;&lt;a:accent1&gt;&lt;a:srgbClr val="4F81BD"/&gt;&lt;/a:accent1&gt;&lt;a:accent2&gt;&lt;a:srgbClr val="C0504D"/&gt;&lt;/a:accent2&gt;&lt;a:accent3
+&gt;&lt;a:srgbClr val="9BBB59"/&gt;&lt;/a:accent3&gt;&lt;a:accent4&gt;&lt;a:srgbClr val="8064A2"/&gt;&lt;/a:accent4&gt;&lt;a:accent5&gt;&lt;a:srgbClr val="4BACC6"/&gt;&lt;/a:accent5
+&gt;&lt;a:accent6&gt;&lt;a:srgbClr val="F79646"/&gt;&lt;/a:accent6&gt;&lt;a:hlink&gt;&lt;a:srgbClr val="0000FF"/&gt;&lt;/a:hlink&gt;&lt;a:folHlink&gt;&lt;a:srgbClr val="800080"/&gt;&lt;/
+a:folHlink&gt;&lt;/a:clrScheme&gt;&lt;a:fontScheme name="Office"&gt;&lt;a:majorFont&gt;&lt;a:latin typeface="Calibri"/&gt;&lt;a:ea typeface=""/&gt;&lt;a:cs typeface
+=""/&gt;&lt;a:font script="Jpan" typeface="MS P????"/&gt;&lt;a:font script="Hang" typeface="?? ??"/&gt;&lt;a:font script="Hans" typeface="??"/&gt;&lt;a:
+font script="Hant" typeface="????"/&gt;&lt;a:font script="Arab" typeface="Times New Roman"/&gt;&lt;a:font script="Hebr" typeface="Times New
+Roman"/&gt;&lt;a:font script= ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.openofficegen" id="apidoc.module.officegen-2.openofficegen">module officegen-2.openofficegen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.openofficegen.makeoodoc" id="apidoc.element.officegen-2.openofficegen.makeoodoc">
+        function <span class="apidocSignatureSpan">officegen-2.openofficegen.</span>makeoodoc
+        <span class="apidocSignatureSpan">( genobj, new_type, options, gen_private, type_info )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeoodoc( genobj, new_type, options, gen_private, type_info ) {
+	///
+	/// @brief Get the string that opening every Office XML type.
+	///
+	/// Every OpenOffice XML resource will have this header at the begining of the file.
+	///
+	/// @param[in] data Ignored by this callback function.
+	/// @return Text string.
+	///
+	gen_private.plugs.type.openoffice.makeOpenOfficeBasicXml = function ( data ) {
+		return '&lt;?xml version="1.0" encoding="UTF-8"?&gt;\n';
+	}
+
+	// Basic API for plugins:
+
+	gen_private.plugs.type.openoffice = {};
+
+	///
+	/// @brief Create the mimetpe resource.
+	///
+	/// Every OpenOffice based document must have this resource.
+	///
+	/// @param[in] data Ignored by this callback function.
+	/// @return Text string.
+	///
+	function makeOpenOfficeMimeType ( data ) {
+		return 'application/vnd.oasis.opendocument.' + gen_private.mixed.res_data.mimeType;
+	}
+
+	///
+	/// @brief Generate the manifest XML resource.
+	///
+	/// Tbis function creating the manifest resource.
+	///
+	/// @param[in] data Array filled with all the resources information.
+	/// @return Text string.
+	///
+	gen_private.plugs.type.openoffice.makeManifest = function ( data ) {
+		var outString = gen_private.plugs.type.openoffice.makeOpenOfficeBasicXml ( data );
+		outString += '&lt;manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2"&gt;\n
+';
+
+		// Add all the rels records inside the data array:
+		for ( var i = 0, total_size = data.length; i &lt; total_size; i++ ) {
+			if ( typeof data[i] != 'undefined' ) {
+				outString += ' &lt;manifest:file-entry manifest:media-type="' + data[i].type + '" manifest:full-path="' + data[i].target + '"/&gt;\n';
+			} // Endif.
+		} // End of for loop.
+
+		outString += '&lt;/manifest:manifest&gt;\n';
+		return outString;
+	}
+
+	///
+	/// @brief Prepare the officegen object to OpenOffice documents.
+	///
+	/// Every plugin that implementing gemenrating OpenOffice document must call this method to initialize
+	/// the common stuff.
+	///
+	/// @param[in] mimeType The mime type of this document.
+	/// @param[in] ext_opt Optional settings (unused right now).
+	///
+	gen_private.plugs.type.openoffice.makeOfficeGenerator = function ( mimeType, ext_opt ) {
+		gen_private.mixed.res_data.mimeType = mimeType;
+		gen_private.mixed.files_list = [];
+
+		gen_private.mixed.files_list.push (
+			{
+				name: 'content.xml',
+				type: 'text/xml'
+			},
+			{
+				name: 'settings.xml',
+				type: 'text/xml'
+			},
+			{
+				name: 'styles.xml',
+				type: 'text/xml'
+			},
+			{
+				name: 'manifest.rdf',
+				type: 'application/rdf+xml'
+			},
+			{
+				name: 'meta.xml',
+				type: 'text/xml'
+			}
+		);
+
+		gen_private.plugs.intAddAnyResourceToParse ( 'mimetype', 'buffer', null, makeOpenOfficeMimeType, true );
+		gen_private.plugs.intAddAnyResourceToParse ( 'META-INF\\manifest.xml', 'buffer', gen_private.mixed.rels_main, gen_private.plugs
+.type.openoffice.cbMakeRels, true );
+		// gen_private.plugs.intAddAnyResourceToParse ( 'settings.xml', 'buffer', null, make???, true );
+		// gen_private.plugs.intAddAnyResourceToParse ( 'styles.xml', 'buffer', null, make???, true );
+		// gen_private.plugs.intAddAnyResourceToParse ( 'manifest.rdf', 'buffer', null, make???, true );
+		// gen_private.plugs.intAddAnyResourceToParse ( 'meta.xml', 'buffer', null, make???, true );
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.plugins" id="apidoc.module.officegen-2.plugins">module officegen-2.plugins</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.getPrototypeByName" id="apidoc.element.officegen-2.plugins.getPrototypeByName">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>getPrototypeByName
+        <span class="apidocSignatureSpan">( typeName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPrototypeByName( typeName ) {
+	return int_officegen_globals.docPrototypes[typeName];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerDocType" id="apidoc.element.officegen-2.plugins.registerDocType">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerDocType
+        <span class="apidocSignatureSpan">( typeName, createFunc, schema_data, docType, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerDocType( typeName, createFunc, schema_data, docType, displayName ) {
+	int_officegen_globals.types[typeName] = {};
+	int_officegen_globals.types[typeName].createFunc = createFunc;
+	int_officegen_globals.types[typeName].schema_data = schema_data;
+	int_officegen_globals.types[typeName].type = docType;
+	int_officegen_globals.types[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerParserType" id="apidoc.element.officegen-2.plugins.registerParserType">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerParserType
+        <span class="apidocSignatureSpan">( typeName, parserFunc, extra_data, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerParserType( typeName, parserFunc, extra_data, displayName ) {
+	int_officegen_globals.resParserTypes[typeName] = {};
+	int_officegen_globals.resParserTypes[typeName].parserFunc = parserFunc;
+	int_officegen_globals.resParserTypes[typeName].extra_data = extra_data;
+	int_officegen_globals.resParserTypes[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerPrototype" id="apidoc.element.officegen-2.plugins.registerPrototype">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerPrototype
+        <span class="apidocSignatureSpan">( typeName, baseObj, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerPrototype( typeName, baseObj, displayName ) {
+	int_officegen_globals.docPrototypes[typeName] = {};
+	int_officegen_globals.docPrototypes[typeName].baseObj = baseObj;
+	int_officegen_globals.docPrototypes[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.plugins.getPrototypeByName" id="apidoc.module.officegen-2.plugins.getPrototypeByName">module officegen-2.plugins.getPrototypeByName</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.getPrototypeByName.getPrototypeByName" id="apidoc.element.officegen-2.plugins.getPrototypeByName.getPrototypeByName">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>getPrototypeByName
+        <span class="apidocSignatureSpan">( typeName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPrototypeByName( typeName ) {
+	return int_officegen_globals.docPrototypes[typeName];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.plugins.registerDocType" id="apidoc.module.officegen-2.plugins.registerDocType">module officegen-2.plugins.registerDocType</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerDocType.registerDocType" id="apidoc.element.officegen-2.plugins.registerDocType.registerDocType">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerDocType
+        <span class="apidocSignatureSpan">( typeName, createFunc, schema_data, docType, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerDocType( typeName, createFunc, schema_data, docType, displayName ) {
+	int_officegen_globals.types[typeName] = {};
+	int_officegen_globals.types[typeName].createFunc = createFunc;
+	int_officegen_globals.types[typeName].schema_data = schema_data;
+	int_officegen_globals.types[typeName].type = docType;
+	int_officegen_globals.types[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.plugins.registerParserType" id="apidoc.module.officegen-2.plugins.registerParserType">module officegen-2.plugins.registerParserType</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerParserType.registerParserType" id="apidoc.element.officegen-2.plugins.registerParserType.registerParserType">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerParserType
+        <span class="apidocSignatureSpan">( typeName, parserFunc, extra_data, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerParserType( typeName, parserFunc, extra_data, displayName ) {
+	int_officegen_globals.resParserTypes[typeName] = {};
+	int_officegen_globals.resParserTypes[typeName].parserFunc = parserFunc;
+	int_officegen_globals.resParserTypes[typeName].extra_data = extra_data;
+	int_officegen_globals.resParserTypes[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.plugins.registerPrototype" id="apidoc.module.officegen-2.plugins.registerPrototype">module officegen-2.plugins.registerPrototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.plugins.registerPrototype.registerPrototype" id="apidoc.element.officegen-2.plugins.registerPrototype.registerPrototype">
+        function <span class="apidocSignatureSpan">officegen-2.plugins.</span>registerPrototype
+        <span class="apidocSignatureSpan">( typeName, baseObj, displayName )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerPrototype( typeName, baseObj, displayName ) {
+	int_officegen_globals.docPrototypes[typeName] = {};
+	int_officegen_globals.docPrototypes[typeName].baseObj = baseObj;
+	int_officegen_globals.docPrototypes[typeName].display = displayName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.setVerboseMode" id="apidoc.module.officegen-2.setVerboseMode">module officegen-2.setVerboseMode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.setVerboseMode.setVerboseMode" id="apidoc.element.officegen-2.setVerboseMode.setVerboseMode">
+        function <span class="apidocSignatureSpan">officegen-2.</span>setVerboseMode
+        <span class="apidocSignatureSpan">( new_state )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setVerboseMode( new_state ) {
+	int_officegen_globals.settings.verbose = new_state;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.officegen-2.toString" id="apidoc.module.officegen-2.toString">module officegen-2.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.officegen-2.toString.toString" id="apidoc.element.officegen-2.toString.toString">
+        function <span class="apidocSignatureSpan">officegen-2.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			'c:numCache' : {
+				'c:formatCode' : formatCode,
+				'c:ptCount' : {'@val': ''+numArr.length},
+				'#list' : function() {
+					result= [];
+					for( var i=0; i&lt;numArr.length; i++ )
+					{
+						result.push({'c:pt' : { '@idx':i, 'c:v': numArr[i].<span class="apidocCodeKeywordSpan">toString
+</span>() }});
+					}
+					
+					return result;
+				}
+			}
+		}
+	};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
