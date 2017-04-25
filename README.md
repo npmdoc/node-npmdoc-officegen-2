@@ -1,4 +1,7 @@
-# api documentation for  [officegen-2 (v0.3.7)](https://github.com/vtloc/officegen#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-officegen-2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-officegen-2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-officegen-2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-officegen-2)
+# npmdoc-officegen-2
+
+#### basic api documentation for  [officegen-2 (v0.3.7)](https://github.com/vtloc/officegen#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-officegen-2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-officegen-2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-officegen-2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-officegen-2)
+
 #### Office Open XML Generator using Node.js streams. Supporting Microsoft Office 2007 and later Word (docx), PowerPoint (pptx,ppsx) and Excel (xlsx). This module is for all frameworks and environments. No need for any commandline tool - this module is doing everything inside it.
 
 [![NPM](https://nodei.co/npm/officegen-2.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/officegen-2)
@@ -96,7 +99,8 @@
         "test": "node examples/make_pptx.js"
     },
     "url": "https://github.com/vtloc/officegen",
-    "version": "0.3.7"
+    "version": "0.3.7",
+    "bin": {}
 }
 ```
 
